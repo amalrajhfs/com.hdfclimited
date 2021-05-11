@@ -1,0 +1,60 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="com.hdfclimited"
+        version="1.0.0">
+
+  <name>Adstringo</name>
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+
+  <asset src="www/Adstringo.js" target="js/Adstringo.js"/>
+
+  <js-module src="www/Adstringo.js" name="Adstringo">
+    <clobbers target="Adstringo" />
+  </js-module>
+
+  <platform name="android">
+
+      <framework src="src/android/buildAdsextra.gradle" custom="true" type="gradleReference"/>
+      
+      
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="Adstringo">
+        <param name="android-package" value="com.hdfclimited.Adstringo"/>
+      </feature>
+    </config-file>
+
+      
+      <config-file target="AndroidManifest.xml" parent="/manifest">
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    </config-file>
+      
+      
+       <config-file target="AndroidManifest.xml" parent="/manifest/application">       
+           
+         
+  
+   
+</config-file>
+      
+      
+      
+      
+    <source-file src="src/android/Adstringo.java" target-dir="src/com/hdfclimited" />
+
+      
+      
+      
+		
+		<lib-file src="src/android/HDFCLTD_UAT_IC_V1.0.aar" />
+  </platform>
+
+</plugin>
