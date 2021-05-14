@@ -1,11 +1,10 @@
-
 <?xml version="1.0" encoding="utf-8"?>
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
         id="com.hdfclimited"
         version="1.0.0">
-
+    
   <name>Adstringo</name>
-
+    
   <engines>
     <engine name="cordova" version=">=3.4.0"/>
   </engines>
@@ -17,44 +16,34 @@
   </js-module>
 
   <platform name="android">
-
+      
       <framework src="src/android/buildAdsextra.gradle" custom="true" type="gradleReference"/>
       
+      <source-file src="src/android/Adstringo.java" target-dir="src/com/hdfclimited" />
       
-    <config-file target="res/xml/config.xml" parent="/*">
-      <feature name="Adstringo">
-        <param name="android-package" value="com.hdfclimited.Adstringo"/>
-      </feature>
+      <lib-file src="src/android/HDFCLTD_UAT_IC_V1.1.aar" />
+      
+      <config-file target="res/xml/config.xml" parent="/*">
+        <feature name="Adstringo">
+            <param name="android-package" value="com.hdfclimited.Adstringo"/>
+        </feature>
+      
     </config-file>
 
-      
-      <config-file target="AndroidManifest.xml" parent="/manifest">
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
+       <config-file target="AndroidManifest.xml" parent="/manifest/application" mode="merge">
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+    </config-file>
+      <edit-config file="AndroidManifest.xml" target="/manifest/application" mode="merge" xmlns:android="http://schemas.android.com/apk/res/android">
+            <application android:usesCleartextTraffic="true" android:requestLegacyExternalStorage="true" android:hardwareAccelerated="true"/>
+      </edit-config>
+    
+    <config-file target="AndroidManifest.xml" parent="/*" mode="merge">
+        <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+        <uses-permission android:name="android.permission.INTERNET" />
     </config-file>
       
-      
-       <config-file target="AndroidManifest.xml" parent="/manifest/application">       
-           
-         
-  
-   
-</config-file>
-      
-      
-      
-      
-    <source-file src="src/android/Adstringo.java" target-dir="src/com/hdfclimited" />
-
-      
-      
-      
-		
-		<lib-file src="src/android/HDFCLTD_UAT_IC_V1.0.aar" />
   </platform>
-
 </plugin>
