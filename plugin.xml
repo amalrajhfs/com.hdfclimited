@@ -21,7 +21,7 @@
       
       <source-file src="src/android/Adstringo.java" target-dir="src/com/hdfclimited" />
       
-      <lib-file src="src/android/HDFCLTD_UAT_IC_V1.1.aar" />
+      <lib-file src="src/android/HDFCLTD_UAT_IC_V1.2.aar" />
       
       <config-file target="res/xml/config.xml" parent="/*">
         <feature name="Adstringo">
