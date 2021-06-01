@@ -1,12 +1,12 @@
 
 {
-  "name": "HDFCLIMITED_UAT",
+  "name": "Hdfclimited_prod",
   "version": "1.0.0",
-  "description": "Adstringo Compression",
+  "description": "Adstringo Image Compression POC",
   "cordova": {
     "id": "com.hdfclimited",
     "platforms": [
-      "android"
+      "android","ios"
     ]
   },
   "keywords": [
